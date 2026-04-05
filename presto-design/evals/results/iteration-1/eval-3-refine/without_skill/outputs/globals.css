@@ -1,0 +1,21 @@
+/* globals */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --color-bg: #f5f4fb;
+  --color-surface: #ffffff;
+  --color-border: rgba(124, 101, 246, 0.15);
+  --color-text-primary: #1a1523;
+  --color-text-secondary: #6b5f7a;
+  --color-accent: #7c65f6;
+  --color-accent-light: #ede9fe;
+  --shadow-card: 0 2px 4px rgba(0,0,0,0.04), 0 8px 24px rgba(124, 101, 246, 0.08);
+}
+
+body {
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

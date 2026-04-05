@@ -1,0 +1,172 @@
+{
+  "eval_id": 3,
+  "name": "refine-typography-color",
+  "prompt": "The typography and colors in this component feel generic and flat. Please fix: the font choice, the color system, and the card treatment. Keep the layout structure intact. Here is the code:\n\n```jsx\n// FeatureCard.jsx\nexport function FeatureCard({ icon, title, description }) {\n  return (\n    <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '32px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>\n      <div style={{ fontSize: '48px', marginBottom: '16px' }}>{icon}</div>\n      <h3 style={{ fontFamily: 'Inter, sans-serif', fontSize: '20px', fontWeight: '600', color: '#000', marginBottom: '12px' }}>{title}</h3>\n      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', color: '#6b7280', lineHeight: '1.6' }}>{description}</p>\n    </div>\n  )\n}\n```\n\n```css\n/* globals */\nbody { font-family: 'Inter', sans-serif; color: #000000; background: #ffffff; }\n```\n\nOutput the improved FeatureCard.jsx and updated globals CSS.",
+  "expected_output": "Improved FeatureCard.jsx with: non-Inter font choice, OKLCH-based colors (no pure #000/#fff), inline styles moved to CSS classes or CSS variables, card simplified (remove one of: border/shadow/background as per redesign rules), semantic class names.",
+  "generated_at": "2026-04-05T06:20:44.656221+00:00",
+  "source_workspace": "E:\\code\\work\\presto-design-skill\\tests\\eval-workspace\\iteration-1\\eval-3-refine",
+  "variants": {
+    "with_skill": {
+      "files": [
+        "FeatureCard.jsx",
+        "globals.css"
+      ],
+      "assertions": [
+        {
+          "id": "no-inline-styles",
+          "description": "Inline style props removed from JSX in favor of CSS classes",
+          "type": "code_absent",
+          "pattern": "style=\\{\\{",
+          "passed": false,
+          "matched": true
+        },
+        {
+          "id": "no-pure-colors",
+          "description": "Pure #000/#fff replaced with perceptually-adjusted colors",
+          "type": "code_absent",
+          "pattern": "color: '#000'|color: '#fff'|color: #000000|color: #ffffff",
+          "passed": true,
+          "matched": false
+        },
+        {
+          "id": "no-inter",
+          "description": "Inter font removed as primary choice",
+          "type": "code_absent",
+          "pattern": "Inter, sans-serif|'Inter'",
+          "passed": true,
+          "matched": false
+        },
+        {
+          "id": "has-oklch-or-token",
+          "description": "Colors use oklch() or CSS custom properties (design tokens)",
+          "type": "code_present",
+          "pattern": "oklch\\(|--color|var\\(--",
+          "passed": true,
+          "matched": true
+        },
+        {
+          "id": "card-simplified",
+          "description": "Card no longer has all three of border + shadow + white background simultaneously",
+          "type": "qualitative",
+          "passed": false,
+          "reason": "The root card still uses a background, solid border, and box-shadow together.",
+          "description_for_judge": "Check whether the card has been simplified — it should not have all of: solid border, box-shadow, AND white background together. At least one should be removed or transformed."
+        }
+      ],
+      "assertion_summary": {
+        "passed": 3,
+        "total": 5,
+        "pass_rate": 0.6
+      },
+      "judge": {
+        "anti_ai_slop": {
+          "score": 13,
+          "notes": [
+            "Typography and color choices improve, but the component still relies heavily on inline styling and a conventional card treatment."
+          ]
+        },
+        "aesthetic_intentionality": {
+          "score": 12,
+          "notes": [
+            "Better font and color decisions are visible, but they are not translated into a cleaner component architecture."
+          ]
+        },
+        "technical_quality": {
+          "score": 10,
+          "notes": [
+            "Fails the no-inline-styles requirement and uses JS hover handlers that mutate inline styles."
+          ]
+        },
+        "contract_compliance": {
+          "score": 11,
+          "notes": [
+            "OKLCH tokens are present, but the card still combines background, border, and shadow simultaneously."
+          ]
+        },
+        "verdict": "Partial improvement only. The style direction is better, but it does not satisfy the refactor and simplification requirements.",
+        "total": 46
+      }
+    },
+    "without_skill": {
+      "files": [
+        "FeatureCard.jsx",
+        "globals.css"
+      ],
+      "assertions": [
+        {
+          "id": "no-inline-styles",
+          "description": "Inline style props removed from JSX in favor of CSS classes",
+          "type": "code_absent",
+          "pattern": "style=\\{\\{",
+          "passed": false,
+          "matched": true
+        },
+        {
+          "id": "no-pure-colors",
+          "description": "Pure #000/#fff replaced with perceptually-adjusted colors",
+          "type": "code_absent",
+          "pattern": "color: '#000'|color: '#fff'|color: #000000|color: #ffffff",
+          "passed": true,
+          "matched": false
+        },
+        {
+          "id": "no-inter",
+          "description": "Inter font removed as primary choice",
+          "type": "code_absent",
+          "pattern": "Inter, sans-serif|'Inter'",
+          "passed": false,
+          "matched": true
+        },
+        {
+          "id": "has-oklch-or-token",
+          "description": "Colors use oklch() or CSS custom properties (design tokens)",
+          "type": "code_present",
+          "pattern": "oklch\\(|--color|var\\(--",
+          "passed": true,
+          "matched": true
+        },
+        {
+          "id": "card-simplified",
+          "description": "Card no longer has all three of border + shadow + white background simultaneously",
+          "type": "qualitative",
+          "passed": false,
+          "reason": "The root card still combines a white/gradient surface, border, and box-shadow.",
+          "description_for_judge": "Check whether the card has been simplified — it should not have all of: solid border, box-shadow, AND white background together. At least one should be removed or transformed."
+        }
+      ],
+      "assertion_summary": {
+        "passed": 2,
+        "total": 5,
+        "pass_rate": 0.4
+      },
+      "judge": {
+        "anti_ai_slop": {
+          "score": 8,
+          "notes": [
+            "Still carries glossy gradient card styling and mixed generic font choices."
+          ]
+        },
+        "aesthetic_intentionality": {
+          "score": 10,
+          "notes": [
+            "Some decorative polish, but it remains closer to trend-driven styling than a disciplined refinement."
+          ]
+        },
+        "technical_quality": {
+          "score": 9,
+          "notes": [
+            "Inline styles remain throughout and the component architecture is unchanged."
+          ]
+        },
+        "contract_compliance": {
+          "score": 8,
+          "notes": [
+            "Uses pure white, keeps Inter in the stack, and does not simplify the card treatment."
+          ]
+        },
+        "verdict": "Mostly a restyle of the original snippet rather than the requested structural cleanup.",
+        "total": 35
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/* ================================================================
+   Global reset & base styles
+================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  /* Off-black instead of pure #000 — less harsh, more refined */
+  color: #111827;
+  background-color: #ffffff;
+  line-height: 1.6;
+  /* Sharper text rendering on macOS/iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,112 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Typography — Outfit replaces Inter */
+  --font-body: 'Outfit', sans-serif;
+
+  /* Off-white / off-black — never pure */
+  --color-bg:             oklch(97.5% 0.008 60);
+  --color-surface:        oklch(99%   0.005 60);
+  --color-ink:            oklch(12%   0.012 240);
+  --color-ink-muted:      oklch(42%   0.012 240);
+  --color-ink-faint:      oklch(62%   0.010 240);
+
+  /* Single accent — warm terracotta-orange */
+  --color-accent:         oklch(63%   0.17  38);
+  --color-accent-hover:   oklch(58%   0.19  38);
+  --color-accent-pressed: oklch(53%   0.19  38);
+  --color-accent-subtle:  oklch(94%   0.05  55);
+
+  /* Borders */
+  --color-border:         oklch(89%   0.009 240);
+  --color-border-strong:  oklch(78%   0.013 240);
+
+  /* Shadows — hue-tinted, not generic black */
+  --shadow-sm: 0 1px 3px oklch(75% 0.012 240 / 0.10),
+               0 1px 2px oklch(75% 0.012 240 / 0.07);
+  --shadow-md: 0 4px 14px oklch(70% 0.012 240 / 0.09),
+               0 2px 4px  oklch(70% 0.012 240 / 0.05);
+
+  /* Spacing scale */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  /* Motion */
+  --ease-out:      cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+
+  /* Z-index scale */
+  --z-nav:   100;
+  --z-modal: 500;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip-to-content — accessibility requirement */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-modal);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Global focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

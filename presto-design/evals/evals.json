@@ -1,0 +1,158 @@
+{
+  "skill_name": "presto-design",
+  "evals": [
+    {
+      "id": 1,
+      "name": "redesign-saas-landing",
+      "prompt": "Please redesign this project to production quality. The codebase is in tests/fixture/. Scan it first, then diagnose every design problem you find, then fix the highest-priority issues. Work within the existing React + plain CSS stack — do not add Tailwind or change the build setup.",
+      "expected_output": "Upgraded App.jsx and App.css with: non-default font, OKLCH-based color palette, no pure #000/#fff, no purple/blue gradient, no 3-equal-column cards, hover states on buttons, corrected hero height, semantic HTML improvements, and copy rewrite removing AI clichés.",
+      "input_files": [
+        "tests/fixture/src/App.jsx",
+        "tests/fixture/src/App.css",
+        "tests/fixture/src/index.css",
+        "tests/fixture/index.html",
+        "tests/fixture/package.json"
+      ],
+      "assertions": [
+        {
+          "id": "no-pure-black-white",
+          "description": "Output does not contain pure #000000 or #ffffff as primary colors",
+          "type": "code_absent",
+          "pattern": "#000000|#ffffff|#000;|#fff;"
+        },
+        {
+          "id": "no-purple-gradient",
+          "description": "Purple/blue AI gradient (#667eea, #764ba2) removed from output",
+          "type": "code_absent",
+          "pattern": "667eea|764ba2"
+        },
+        {
+          "id": "no-inter-as-primary",
+          "description": "Inter is no longer the primary display font",
+          "type": "code_absent",
+          "pattern": "font-family: 'Inter'|font-family: Inter"
+        },
+        {
+          "id": "has-hover-states",
+          "description": "Buttons have hover state defined",
+          "type": "code_present",
+          "pattern": ":hover"
+        },
+        {
+          "id": "no-height-100vh",
+          "description": "height: 100vh replaced with min-height or 100dvh",
+          "type": "code_absent",
+          "pattern": "height: 100vh"
+        },
+        {
+          "id": "no-ai-copy",
+          "description": "AI cliché copy removed (Elevate, Seamless, Unleash, Next-Gen, Game-changer, Leverage)",
+          "type": "code_absent",
+          "pattern": "Elevate|Unleash|Next-Gen|Game-changer|Leverage"
+        },
+        {
+          "id": "no-equal-three-columns",
+          "description": "3-equal-column grid replaced with varied layout",
+          "type": "code_absent",
+          "pattern": "repeat\\(3, 1fr\\)"
+        },
+        {
+          "id": "complete-output",
+          "description": "Output is complete — no truncation, stubs or ellipsis",
+          "type": "code_absent",
+          "pattern": "\\.\\.\\.\\s*$|// \\.\\.\\.|/\\* \\.\\.\\. \\*/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "create-dashboard-tool",
+      "prompt": "Build a SaaS landing page for 'Marble' — a lightweight team knowledge base tool. Target audience: small engineering teams (5–20 people) who are tired of outdated wikis. Tone: calm, focused, slightly opinionated. Use React + plain CSS only. Produce complete, runnable code.",
+      "expected_output": "A complete App.jsx + App.css with: non-default font, OKLCH-based colors, single accent color, intentional aesthetic direction, hover states on all interactive elements, no pure black/white, no purple gradient, no 3-equal-card layout, complete code with no stubs.",
+      "input_files": [],
+      "assertions": [
+        {
+          "id": "no-pure-black-white",
+          "description": "Does not use pure #000000 or #ffffff",
+          "type": "code_absent",
+          "pattern": "#000000|#ffffff|color: #000;|color: #fff;"
+        },
+        {
+          "id": "no-inter-primary",
+          "description": "Inter is not the primary display font",
+          "type": "code_absent",
+          "pattern": "font-family: 'Inter'|font-family: Inter"
+        },
+        {
+          "id": "no-purple-gradient",
+          "description": "No cyan-on-dark or purple-to-blue gradient",
+          "type": "code_absent",
+          "pattern": "667eea|764ba2|linear-gradient.*#6|linear-gradient.*purple"
+        },
+        {
+          "id": "has-hover-states",
+          "description": "Buttons or interactive elements have hover states",
+          "type": "code_present",
+          "pattern": ":hover"
+        },
+        {
+          "id": "uses-oklch",
+          "description": "Colors defined using oklch() perceptual color space",
+          "type": "code_present",
+          "pattern": "oklch\\("
+        },
+        {
+          "id": "complete-output",
+          "description": "No truncation, stubs, or ellipsis in output",
+          "type": "code_absent",
+          "pattern": "// \\.\\.\\.|\\.\\.\\.\\s*$|/\\* \\.\\.\\. \\*/"
+        },
+        {
+          "id": "has-jsx-and-css",
+          "description": "Output includes both JSX component code and CSS",
+          "type": "code_present",
+          "pattern": "oklch|font-family"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "refine-typography-color",
+      "prompt": "The typography and colors in this component feel generic and flat. Please fix: the font choice, the color system, and the card treatment. Keep the layout structure intact. Here is the code:\n\n```jsx\n// FeatureCard.jsx\nexport function FeatureCard({ icon, title, description }) {\n  return (\n    <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '32px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>\n      <div style={{ fontSize: '48px', marginBottom: '16px' }}>{icon}</div>\n      <h3 style={{ fontFamily: 'Inter, sans-serif', fontSize: '20px', fontWeight: '600', color: '#000', marginBottom: '12px' }}>{title}</h3>\n      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', color: '#6b7280', lineHeight: '1.6' }}>{description}</p>\n    </div>\n  )\n}\n```\n\n```css\n/* globals */\nbody { font-family: 'Inter', sans-serif; color: #000000; background: #ffffff; }\n```\n\nOutput the improved FeatureCard.jsx and updated globals CSS.",
+      "expected_output": "Improved FeatureCard.jsx with: non-Inter font choice, OKLCH-based colors (no pure #000/#fff), inline styles moved to CSS classes or CSS variables, card simplified (remove one of: border/shadow/background as per redesign rules), semantic class names.",
+      "input_files": [],
+      "assertions": [
+        {
+          "id": "no-inline-styles",
+          "description": "Inline style props removed from JSX in favor of CSS classes",
+          "type": "code_absent",
+          "pattern": "style=\\{\\{"
+        },
+        {
+          "id": "no-pure-colors",
+          "description": "Pure #000/#fff replaced with perceptually-adjusted colors",
+          "type": "code_absent",
+          "pattern": "color: '#000'|color: '#fff'|color: #000000|color: #ffffff"
+        },
+        {
+          "id": "no-inter",
+          "description": "Inter font removed as primary choice",
+          "type": "code_absent",
+          "pattern": "Inter, sans-serif|'Inter'"
+        },
+        {
+          "id": "has-oklch-or-token",
+          "description": "Colors use oklch() or CSS custom properties (design tokens)",
+          "type": "code_present",
+          "pattern": "oklch\\(|--color|var\\(--"
+        },
+        {
+          "id": "card-simplified",
+          "description": "Card no longer has all three of border + shadow + white background simultaneously",
+          "type": "qualitative",
+          "description_for_judge": "Check whether the card has been simplified — it should not have all of: solid border, box-shadow, AND white background together. At least one should be removed or transformed."
+        }
+      ]
+    }
+  ]
+}

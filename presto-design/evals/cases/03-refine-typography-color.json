@@ -1,0 +1,39 @@
+{
+  "id": 3,
+  "name": "refine-typography-color",
+  "prompt": "The typography and colors in this component feel generic and flat. Please fix: the font choice, the color system, and the card treatment. Keep the layout structure intact. Here is the code:\n\n```jsx\n// FeatureCard.jsx\nexport function FeatureCard({ icon, title, description }) {\n  return (\n    <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '32px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>\n      <div style={{ fontSize: '48px', marginBottom: '16px' }}>{icon}</div>\n      <h3 style={{ fontFamily: 'Inter, sans-serif', fontSize: '20px', fontWeight: '600', color: '#000', marginBottom: '12px' }}>{title}</h3>\n      <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', color: '#6b7280', lineHeight: '1.6' }}>{description}</p>\n    </div>\n  )\n}\n```\n\n```css\n/* globals */\nbody { font-family: 'Inter', sans-serif; color: #000000; background: #ffffff; }\n```\n\nOutput the improved FeatureCard.jsx and updated globals CSS.",
+  "expected_output": "Improved FeatureCard.jsx with: non-Inter font choice, OKLCH-based colors (no pure #000/#fff), inline styles moved to CSS classes or CSS variables, card simplified (remove one of: border/shadow/background as per redesign rules), semantic class names.",
+  "input_files": [],
+  "assertions": [
+    {
+      "id": "no-inline-styles",
+      "description": "Inline style props removed from JSX in favor of CSS classes",
+      "type": "code_absent",
+      "pattern": "style=\\{\\{"
+    },
+    {
+      "id": "no-pure-colors",
+      "description": "Pure #000/#fff replaced with perceptually-adjusted colors",
+      "type": "code_absent",
+      "pattern": "color: '#000'|color: '#fff'|color: #000000|color: #ffffff"
+    },
+    {
+      "id": "no-inter",
+      "description": "Inter font removed as primary choice",
+      "type": "code_absent",
+      "pattern": "Inter, sans-serif|'Inter'"
+    },
+    {
+      "id": "has-oklch-or-token",
+      "description": "Colors use oklch() or CSS custom properties (design tokens)",
+      "type": "code_present",
+      "pattern": "oklch\\(|--color|var\\(--"
+    },
+    {
+      "id": "card-simplified",
+      "description": "Card no longer has all three of border + shadow + white background simultaneously",
+      "type": "qualitative",
+      "description_for_judge": "Check whether the card has been simplified - it should not have all of: solid border, box-shadow, and white background together. At least one should be removed or transformed."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Local workspace state
+.claude/
+.agents/
+skills-lock.json
+
+# Node / frontend build artifacts
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+
+# Generated eval artifacts
+tests/eval-workspace/
+
+# Test fixture installs and builds
+tests/**/node_modules/
+tests/**/dist/
+tests/**/.vite/
+tests/**/.vite-temp/

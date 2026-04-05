@@ -1,0 +1,4 @@
+interface:
+  display_name: "Presto Design"
+  short_description: "Route frontend design work to focused create, refine, redesign, motion, and fix workflows"
+  default_prompt: "Use $presto-design to build, refine, or redesign a frontend UI with a clear aesthetic direction."
