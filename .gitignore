@@ -4,27 +4,16 @@ Thumbs.db
 *.log
 *.tmp
 
-# Local workspace state
-.claude/
+# Local agent state
 .agents/
-skills-lock.json
+.claude/
 
-# Node / frontend build artifacts
+# Local environments
+.venv/
 node_modules/
 dist/
 build/
 .vite/
 .cache/
-
-# Python
 __pycache__/
 *.pyc
-
-# Generated eval artifacts
-tests/eval-workspace/
-
-# Test fixture installs and builds
-tests/**/node_modules/
-tests/**/dist/
-tests/**/.vite/
-tests/**/.vite-temp/
