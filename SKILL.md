@@ -106,6 +106,24 @@ Quick signal: `gsap` in `package.json` plus a motion-related task means you shou
 
 ---
 
-## 7. Execution
+## 7. Tailwind Integration
+
+If the project uses Tailwind CSS, load `tailwind-integration.md` alongside the selected cluster before writing code.
+
+Quick signals:
+- `tailwindcss` in `package.json`
+- `globals.css` with `@tailwind` or `@import "tailwindcss"`
+- `tailwind.config.*` exists
+- existing code already uses utility-heavy `className` strings
+
+Treat Tailwind support as version-sensitive:
+- **Tailwind v4**: prefer tokens in CSS via `@theme`, keep styling close to the stylesheet, and do not invent a config-first workflow if no config exists.
+- **Tailwind v3**: use `tailwind.config.*` theme extension when adding reusable tokens or new scales.
+
+Do not force a CSS-module or styled-components refactor in a Tailwind project unless the user explicitly asks for it.
+
+---
+
+## 8. Execution
 
 Follow the selected cluster's workflow. This file is only the router. Do not improvise routing rules mid-task.

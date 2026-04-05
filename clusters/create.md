@@ -4,6 +4,8 @@ Build distinctive, production-grade UI from scratch. Synthesizes: `frontend-desi
 
 ## Preparation
 
+Tailwind checkpoint: if the project uses Tailwind, load `tailwind-integration.md` and detect whether it is v3 or v4 before choosing where tokens live.
+
 1. **Context confirmed** (per SKILL.md §1) — you have audience, tone, and use cases.
 2. **Aesthetic direction chosen** — if a preset is loaded, follow it. Otherwise, commit to one of these directions before writing a line of code:
    - Brutally minimal · Maximalist · Retro-futuristic · Organic/natural
@@ -100,6 +102,7 @@ Output every file in full. No stubs. No truncation. Working, runnable, productio
 Verify these before you stop:
 
 - No primary UI relies on inline styles when the styling system can express it
+- In Tailwind projects, reusable values live in theme tokens or CSS variables before reaching for arbitrary values
 - The composition does not collapse into three equal-width cards as the whole layout
 - Cards do not stack background + border + shadow without a hierarchy reason
 - Typography, color, and spacing choices all support the same intentional direction

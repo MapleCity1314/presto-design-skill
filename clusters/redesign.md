@@ -8,6 +8,8 @@ Upgrade an existing project to premium quality without rebuilding from scratch. 
 
 ## Three-Phase Workflow
 
+Tailwind note: when the project uses Tailwind CSS, load `tailwind-integration.md` before deciding how to add tokens, variants, or shared utilities.
+
 ### Phase 1 — Scan
 
 Before diagnosing anything, read the codebase to understand what you're working with:
@@ -191,6 +193,8 @@ Before finishing, verify:
 - The final output still satisfies `contract.md`
 
 ## Constraints
+
+- In Tailwind projects, prefer semantic tokens and readable utility composition over arbitrary-value sprawl.
 
 - Work with the existing tech stack. No framework migration.
 - Check Tailwind version (`v3` vs `v4`) before touching config — syntax is different.

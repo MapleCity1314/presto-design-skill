@@ -33,6 +33,12 @@ These patterns mark output as AI-generated garbage. Never produce them:
 
 ## Technical Baseline (Tailwind projects)
 
+- Detect Tailwind version before editing config or tokens (`v3` vs `v4`).
+- Tailwind v4: prefer semantic tokens in CSS via `@theme`.
+- Tailwind v3: extend `tailwind.config.*` only for reusable theme values.
+- Prefer scale tokens over arbitrary values; use arbitrary values only for true one-offs or optical corrections.
+- If utility strings become unreadable, extract composition with `cn(...)` or the project's existing variant pattern.
+
 - Use `motion/react` (formerly framer-motion) for JS animation.
 - Use `cn` (clsx + tailwind-merge) for conditional classes.
 - Use accessible primitives (Base UI / Radix / React Aria) for keyboard/focus behavior.
