@@ -4,6 +4,8 @@ Upgrade an existing project to premium quality without rebuilding from scratch. 
 
 **Core rule**: work with the existing stack. Do not migrate frameworks or rewrite what's working. Improve what's there, in place.
 
+Escalation rule: preserve the current design language when it is coherent and product-appropriate. Push for a stronger reset only when the existing language is generic, inconsistent, or actively undermining clarity or trust.
+
 ---
 
 ## Three-Phase Workflow
@@ -22,6 +24,8 @@ Before diagnosing anything, read the codebase to understand what you're working 
 
 **Output a one-paragraph summary**: framework + styling method + current design quality level + the 2-3 most glaring problems you've already spotted.
 
+Before moving on, answer this explicitly: is this project asking for refinement inside an existing language, or is the existing language itself the problem?
+
 ---
 
 ### Phase 2 — Diagnose
@@ -29,6 +33,11 @@ Before diagnosing anything, read the codebase to understand what you're working 
 Run through every dimension below. Mark each problem found as **P0** (fix now), **P1** (fix before ship), or **P2** (next iteration). Don't fix yet — complete the full diagnosis first.
 
 **Priority guide**: P0 = instant visual credibility killers, P1 = significant quality improvements, P2 = polish and content refinement.
+
+Add this cross-check to every category:
+
+- Can you explain why the proposed change better fits the audience, product, and current codebase than the existing choice?
+- If not, you are still reacting to style symptoms rather than making a design decision.
 
 #### Typography
 
@@ -110,6 +119,13 @@ Run through every dimension below. Mark each problem found as **P0** (fix now), 
 
 #### Iconography
 
+Tooling fallback:
+
+- inspect installed icon packages first
+- prefer one existing family over introducing a guessed mix
+- avoid hand-authored SVG paths from memory
+- if no dependable icon source exists, keep icon updates minimal and document the constraint
+
 - [ ] `P1` **Lucide or Feather as sole library.** → Phosphor, Solar, or Tabler. Use `better-icons search` to find alternatives.
 - [ ] `P2` **Cliché metaphors.** Rocket for launch, shield for security → bolt, fingerprint, spark, vault.
 - [ ] **Inconsistent stroke widths.** Audit all icons and standardize to one stroke weight.
@@ -143,6 +159,8 @@ Things AI typically generates without:
 ### Phase 3 — Fix Priority
 
 Apply in this order — maximum visual impact, minimum risk:
+
+First decide whether a style reset is necessary at all. If the current language is already coherent, start with hierarchy, states, spacing, and implementation quality before changing identity-level choices.
 
 1. **Font swap** — biggest instant improvement, lowest risk. One line changes the feel entirely.
 2. **Color palette cleanup** — remove clashing/oversaturated colors, fix pure black/white.
@@ -189,6 +207,7 @@ Before finishing, verify:
 - Inline styles were removed unless the target is email HTML or a truly runtime-driven one-off
 - Generic card language was simplified: do not keep background + border + shadow everywhere
 - The layout no longer depends on three equal-width columns as its main composition
+- The redesign can explain why its typography, palette, and composition are better fits for the audience
 - The redesign upgraded structure and hierarchy, not just fonts and accent colors
 - The final output still satisfies `contract.md`
 

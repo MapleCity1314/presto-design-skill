@@ -5,7 +5,7 @@ description: "Unified frontend design harness that routes create, refine, redesi
 
 # Presto Design Harness
 
-A thin router. Detect intent, load one cluster and one optional preset, then apply the contract. Never load more than one cluster at a time.
+A route-driven design workflow. Detect intent, load one cluster and one optional preset, then apply the contract. Never load more than one cluster at a time.
 
 ---
 
@@ -46,6 +46,20 @@ How to apply them:
 - `DENSITY 1-3`: generous whitespace, single-column layouts, max `65ch` text, few elements per screen
 - `DENSITY 4-7`: balanced information density with breathing room
 - `DENSITY 8-10`: dense tables, side navigation, multi-panel dashboards
+
+Calibration rule:
+
+- If you set a parameter, it must produce visible downstream decisions in layout, typography, spacing, or motion.
+- Do not mention a parameter value unless you can point to what it changed.
+- When the task is ambiguous, reason in coarse bands (`low`, `medium`, `high`) first, then map to the numeric range.
+
+Quick anchors:
+
+| Parameter | Low | Medium | High |
+|-----------|-----|--------|------|
+| `VARIANCE` | symmetric, stable, predictable | selective asymmetry, stronger hierarchy | layered, offset, visually risky |
+| `MOTION` | hover/focus only | entrance + state transitions | scroll choreography and motion-led emphasis |
+| `DENSITY` | editorial whitespace | balanced product UI | operational, data-heavy composition |
 
 User override signals:
 
@@ -96,6 +110,12 @@ After selecting a cluster, check for an aesthetic signal and load a preset if on
 
 Every output from every cluster must satisfy `contract.md`. Read it before writing code.
 
+Before coding, produce a short design rationale covering:
+
+- why this direction fits the audience
+- why the chosen typography/color/layout approach fits the product
+- why this level of change is appropriate for the current project
+
 ---
 
 ## 6. GSAP Integration
@@ -127,3 +147,9 @@ Do not force a CSS-module or styled-components refactor in a Tailwind project un
 ## 8. Execution
 
 Follow the selected cluster's workflow. This file is only the router. Do not improvise routing rules mid-task.
+
+Respect-the-stack rule:
+
+- Always preserve the host stack and working architecture.
+- Preserve the existing design language when it is coherent and product-appropriate.
+- Escalate to stronger visual change only when the current language is generic, inconsistent, or actively harming clarity or credibility.

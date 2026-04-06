@@ -16,12 +16,19 @@ Tailwind checkpoint: if the project uses Tailwind, load `tailwind-integration.md
    **The direction must be intentional, not incidental.** Bold maximalism and refined minimalism both work. Vague "clean and modern" does not.
 
 3. **Ask yourself**: What is the one thing a user will remember about this interface? Design to make that thing unforgettable.
+4. **Check the escalation level**: are you establishing a new language, or working inside an existing one? If the project already has a coherent visual system, strengthen it before replacing it.
 
 ## Implementation Workflow
 
 ### Step 1: Commit to a design decision in writing
 
 Before any code, state in one sentence: *"This interface will feel [X] because this product is for [Y] doing [Z]."* This anchors every subsequent decision.
+
+Then state three short reasons:
+
+- why this typography direction fits the audience
+- why this palette and surface language fit the product
+- why this amount of visual change is appropriate
 
 ### Step 2: Typography
 
@@ -60,7 +67,7 @@ Details separate good from great.
 
 - Custom borders, subtle textures, micro-typographic refinements.
 - Shadows: directional and purposeful, not default drop shadows on rounded rectangles.
-- Icons: choose a coherent set and retrieve the actual SVGs — don't write paths from memory. Use `better-icons`:
+- Icons: choose a coherent set and retrieve the actual SVGs - don't write paths from memory. Use `better-icons`:
 
   ```bash
   # Search across 200+ libraries
@@ -81,6 +88,12 @@ Details separate good from great.
   ```
   recommend_icons({ use_case: "navigation menu", style: "outline", limit: 10 })
   ```
+
+  Fallback when icon tooling is unavailable:
+  - inspect `package.json` and existing imports for installed icon libraries
+  - stay within one already-installed family if it is acceptable
+  - prefer package imports over hand-writing SVG paths from memory
+  - if no icon system exists, keep icon changes conservative and note the limitation
 - Interaction surfaces: clear affordances, obvious focus states.
 
 ### Step 6: Motion (if appropriate)
@@ -105,6 +118,7 @@ Verify these before you stop:
 - In Tailwind projects, reusable values live in theme tokens or CSS variables before reaching for arbitrary values
 - The composition does not collapse into three equal-width cards as the whole layout
 - Cards do not stack background + border + shadow without a hierarchy reason
+- The chosen fonts, colors, motion level, and spacing model can each be defended in one sentence
 - Typography, color, and spacing choices all support the same intentional direction
 - The result still satisfies `contract.md`
 
