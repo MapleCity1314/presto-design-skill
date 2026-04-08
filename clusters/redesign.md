@@ -173,33 +173,6 @@ First decide whether a style reset is necessary at all. If the current language 
 
 ---
 
-## Upgrade Techniques
-
-When the basic fixes are done, pull from these for high visual impact:
-
-### Typography
-- **Variable font animation**: interpolate `font-weight` on scroll or hover for text that feels alive.
-- **Text mask reveals**: large typography as a window to video or animated imagery.
-- **Outlined-to-fill transitions**: text starts as stroke outline, fills on scroll entry.
-
-### Layout
-- **Broken grid / asymmetry**: elements that deliberately ignore columns — overlapping, bleeding off-screen, calculated offset.
-- **Parallax card stacks**: sections that stick and stack over each other on scroll.
-- **Split-screen scroll**: two halves sliding in opposite directions.
-- **Whitespace maximization**: aggressive negative space to force focus on a single hero element.
-
-### Motion
-- **Staggered entry**: elements cascade in with `50–80ms` delays, Y-translate + opacity fade. Never mount everything simultaneously.
-- **Spring physics**: replace linear easing with spring-based motion on interactive elements (`stiffness: 100, damping: 20`).
-- **Scroll-driven reveals**: content entering through expanding masks, wipes, or SVG draw-on paths tied to scroll.
-
-### Surface
-- **Noise and grain overlay**: `position: fixed; pointer-events: none; opacity: 0.03–0.06` pseudo-element with SVG noise — breaks digital flatness without decoration.
-- **Colored tinted shadows**: shadows carry the background hue rather than generic black.
-- **Spotlight borders**: card borders that illuminate dynamically under cursor (CSS custom property + `@property` + mousemove tracking).
-
----
-
 ## Final Self-Check
 
 Before finishing, verify:

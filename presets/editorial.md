@@ -6,20 +6,6 @@ Apply this preset on top of any cluster. It constrains the aesthetic layer — t
 
 ---
 
-## Aesthetic Intent
-
-Every layout is a deliberate composition. Typography is the architecture. Color is used with precision — a single strong palette choice executed with confidence. Spacing is dramatic: sections breathe, content is given room to exist. The design feels like it was made by a human with taste, not assembled from components.
-
-**The variance engine**: every implementation should feel distinct. Rotate through these aesthetic directions and pick the one that fits the project:
-
-- **Organic editorial**: flowing type, warm earth tones, generous negative space, serif headings
-- **Geometric precision**: grid-exposed structure, saturated primaries, sharp type, mathematical spacing
-- **Dark luxury**: deep backgrounds, metallic or jewel-tone accents, refined serif+sans contrast
-- **Swiss modernist**: strong typographic hierarchy, minimal color, deliberate grid, neutral palette
-- **New wave**: expressive type mixing, bold color moments, unexpected composition, editorial photography
-
----
-
 ## Parameters (adjust per project)
 
 | Parameter | Default | Range | Effect |
@@ -133,7 +119,7 @@ Editorial layout creates drama through contrast and asymmetry:
 ```
 
 Rules:
-- Not everything spans full width. Offset and asymmetry create tension.
+- Not everything spans full width. Use offset and asymmetry to create hierarchy.
 - Use the grid's gutter as a design element — some elements bleed into it.
 - Full-bleed images and color blocks should be intentional punctuation.
 - Text: max-width `65ch` for prose, `48ch` for captions.
@@ -152,15 +138,13 @@ More expressive than minimalist, still purposeful:
 - Entrance: `translate(0, 20px) → translate(0, 0)` + opacity, `500ms ease-reveal`.
 - Scroll reveals: `IntersectionObserver` at 15% threshold.
 - Hover on cards: `scale(1.01)` + subtle shadow increase, `250ms ease-reveal`.
-- Image parallax: 0.1–0.15 multiplier. Slow. Elegant.
+- Image parallax: 0.1–0.15 multiplier.
 - Page transitions: View Transitions API when supported.
 - Spring physics: allowed on isolated delight moments. `stiffness: 100, damping: 20`.
 
 ---
 
 ## High-End Details
-
-These details separate editorial from generic:
 
 1. **Dual-bezier shadow architecture**: base shadow for depth + ambient shadow for softness.
    ```css
@@ -171,7 +155,7 @@ These details separate editorial from generic:
 
 2. **Optical adjustments**: visually center content that mathematical centering makes feel off.
 
-3. **Image treatment**: images in editorial layouts benefit from `object-position` fine-tuning, `filter: contrast(1.05) saturate(0.95)` for a print-like quality.
+3. **Image treatment**: `object-position` fine-tuning for correct crop; `filter: contrast(1.05) saturate(0.95)`.
 
 4. **Micro-typography**: `text-rendering: optimizeLegibility`, `font-kerning: auto`, `-webkit-font-smoothing: antialiased`.
 

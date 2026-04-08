@@ -58,33 +58,11 @@ These three parameters shape all design decisions. Defaults apply unless the use
 | `MOTION` | **6** | 1-10 | 1 = static; 10 = cinematic, spring-heavy motion |
 | `DENSITY` | **4** | 1-10 | 1 = airy gallery; 10 = compact cockpit |
 
-How to apply them:
-
-- `VARIANCE 1-3`: symmetric layouts, centered content, stable grid, no surprises
-- `VARIANCE 4-7`: offset asymmetry, varied spacing, deliberate breaks from the grid
-- `VARIANCE 8-10`: bleeding edges, overlap, rotated text, unexpected composition
-
-- `MOTION 1-3`: CSS transitions only, `150ms` max, no entrance animation
-- `MOTION 4-7`: entrance animations, stagger, micro-interactions, spring on key elements
-- `MOTION 8-10`: scroll-driven motion, spring physics, page transitions, GSAP timeline choreography
-
-- `DENSITY 1-3`: generous whitespace, single-column layouts, max `65ch` text, few elements per screen
-- `DENSITY 4-7`: balanced information density with breathing room
-- `DENSITY 8-10`: dense tables, side navigation, multi-panel dashboards
-
 Calibration rule:
 
 - If you set a parameter, it must produce visible downstream decisions in layout, typography, spacing, or motion.
 - Do not mention a parameter value unless you can point to what it changed.
 - When the task is ambiguous, reason in coarse bands (`low`, `medium`, `high`) first, then map to the numeric range.
-
-Quick anchors:
-
-| Parameter | Low | Medium | High |
-|-----------|-----|--------|------|
-| `VARIANCE` | symmetric, stable, predictable | selective asymmetry, stronger hierarchy | layered, offset, visually risky |
-| `MOTION` | hover/focus only | entrance + state transitions | scroll choreography and motion-led emphasis |
-| `DENSITY` | editorial whitespace | balanced product UI | operational, data-heavy composition |
 
 User override signals:
 

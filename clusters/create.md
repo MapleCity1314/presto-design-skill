@@ -7,16 +7,9 @@ Build distinctive, production-grade UI from scratch. Synthesizes: `frontend-desi
 Tailwind checkpoint: if the project uses Tailwind, load `tailwind-integration.md` and detect whether it is v3 or v4 before choosing where tokens live.
 
 1. **Context confirmed** (per SKILL.md §1) — you have audience, tone, and use cases.
-2. **Aesthetic direction chosen** — if a preset is loaded, follow it. Otherwise, commit to one of these directions before writing a line of code:
-   - Brutally minimal · Maximalist · Retro-futuristic · Organic/natural
-   - Luxury/refined · Playful/toy-like · Editorial/magazine · Brutalist/raw
-   - Art deco/geometric · Soft/pastel · Industrial/utilitarian
-   - ...or synthesize something true to the project's personality.
+2. **Aesthetic direction chosen** — if a preset is loaded, follow it. Otherwise, commit to one aesthetic direction before writing a line of code. Document it in the `<design-log>` with a BECAUSE grounded in audience, domain, or project brief.
 
-   **The direction must be intentional, not incidental.** Bold maximalism and refined minimalism both work. Vague "clean and modern" does not.
-
-3. **Ask yourself**: What is the one thing a user will remember about this interface? Design to make that thing unforgettable.
-4. **Check the escalation level**: are you establishing a new language, or working inside an existing one? If the project already has a coherent visual system, strengthen it before replacing it.
+3. **Check the escalation level**: are you establishing a new language, or working inside an existing one? If the project already has a coherent visual system, strengthen it before replacing it.
 
 ## Implementation Workflow
 
@@ -32,8 +25,6 @@ Then state three short reasons:
 
 ### Step 2: Typography
 
-Choose fonts that are beautiful, unique, and fit the direction. Pair a distinctive display font with a refined body font.
-
 - Use a modular type scale with fluid sizing (`clamp`).
 - Vary weights and sizes to create clear hierarchy — don't flatten everything to the same size.
 - Use `text-balance` on headings, `text-pretty` on body copy.
@@ -42,19 +33,14 @@ Choose fonts that are beautiful, unique, and fit the direction. Pair a distincti
 
 ### Step 3: Color
 
-Commit to a cohesive palette. A dominant color with sharp accents outperforms timid, evenly-distributed palettes.
-
 - Use OKLCH for perceptual uniformity: `oklch(L% C H)`.
 - Tint your neutrals toward your brand hue.
 - Color ratio: 60% dominant / 30% secondary / 10% accent.
-- Gray text on colored backgrounds looks washed out — use a dark shade of the background hue instead.
+- For text on colored backgrounds, use a dark shade of the background hue instead of gray.
 - Check: does every color serve a purpose? Remove decorative-only colors.
 
 ### Step 4: Layout & Space
 
-Create rhythm through varied spacing — not uniform padding everywhere.
-
-- Use asymmetry and unexpected compositions. Break the grid intentionally for emphasis.
 - `clamp()` for fluid spacing that breathes on larger screens.
 - Flex for 1D, Grid for 2D. Don't default to Grid for everything.
 - No cards around content that doesn't need containment.
@@ -63,9 +49,6 @@ Create rhythm through varied spacing — not uniform padding everywhere.
 
 ### Step 5: Visual Details
 
-Details separate good from great.
-
-- Custom borders, subtle textures, micro-typographic refinements.
 - Shadows: directional and purposeful, not default drop shadows on rounded rectangles.
 - Icons: choose a coherent set and retrieve the actual SVGs - don't write paths from memory. Use `better-icons`:
 
@@ -124,6 +107,4 @@ Verify these before you stop:
 
 ## Aesthetic Defaults (no preset loaded)
 
-Apply current SKILL.md parameters (default: Variance 8 / Motion 6 / Density 4). Translate to:
-- Font: a geometric or humanist sans for display, paired with a refined body font. Warm-neutral OKLCH base, one strong accent.
-- Motion: purposeful micro-interactions only — no performative animation for its own sake.
+Apply current SKILL.md parameters (default: Variance 8 / Motion 6 / Density 4). Document font, color, and motion choices in `<design-log>` with BECAUSE grounded in audience and domain.

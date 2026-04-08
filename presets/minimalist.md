@@ -6,12 +6,6 @@ Apply this preset on top of any cluster. It constrains the aesthetic layer — t
 
 ---
 
-## Aesthetic Intent
-
-Clean, editorial, focused. Typography does the heavy lifting. Color is used for meaning, not decoration. Whitespace is the primary structural tool. Nothing competes for attention — hierarchy is achieved through scale and weight, not color or decoration.
-
----
-
 ## Color System
 
 ```css
