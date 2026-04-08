@@ -1,51 +1,117 @@
 # Output Contract
 
-Every output from every presto-design cluster must satisfy these rules. They are not suggestions - treat violations as bugs.
+Every output from every presto-design cluster must satisfy these rules. They are not suggestions — treat violations as bugs.
+
+---
 
 ## Design rationale (mandatory)
 
-Before implementation, the agent must be able to state:
+Before implementation, the agent must emit a `<design-log>` block (see SKILL.md §2.5). The log must contain grounded decisions for: type system, color system, layout primitive policy, motion policy, and icon family.
 
-- why this direction fits the audience and use case
-- why the chosen typography, color, and composition fit the product
-- why the amount of change is appropriate for the current project
+Each BECAUSE must reference one of:
+- A fact extracted during the Context phase (stack, existing tokens, brand assets)
+- A user-stated requirement from the current conversation
+- A named domain convention with ≥1 observable characteristic
 
-If the agent cannot explain the decision, the design is not locked yet.
+If a BECAUSE cannot be grounded in one of these, the decision is not locked. Do not proceed to code.
+
+---
 
 ## Anti-AI-Slop (mandatory)
 
-These are common failure modes, not timeless truths. Treat them as warning signs to interrogate, not a substitute for reasoning.
+These are common failure modes, not timeless truths. Each rule below uses the form `FORBIDDEN … UNLESS`. If a forbidden pattern appears in your output, a UNLESS condition must be satisfied and documented. Write which condition was met.
 
-If a project-specific reason justifies one of these patterns, the reason must be explicit and stronger than "it looks modern."
+If no UNLESS condition is satisfied, the pattern is a contract violation.
 
-**Typography**
+### Typography
 
-- Never default to Inter, Roboto, Arial, Open Sans, or system-ui as the primary display font without a project-specific reason.
-- Never use monospace as lazy "tech" vibes shorthand.
-- Never place large rounded icons above every heading by default.
+**FORBIDDEN**: Inter, Roboto, Arial, Open Sans, or system-ui as the primary display font.
+**UNLESS**:
+- Existing codebase uses this font as stated brand identity (evidenced by `@font-face` declarations, explicit brand docs, or existing components that make it load-bearing), OR
+- User has stated this font requirement in the current conversation, OR
+- DECISION log contains: `DECISION: use [font] BECAUSE: [audience or domain reason]`
 
-**Color**
+**FORBIDDEN**: Monospace as the primary voice for body text, marketing headings, or navigation labels.
+**UNLESS**:
+- Domain is terminal emulator, code editor, data terminal, finance terminal, or developer tool where monospace is the correct aesthetic convention for that domain, OR
+- DECISION log contains: `DECISION: use monospace BECAUSE: [named domain reason]`
 
-- Never default to `#000` or `#fff` without checking whether tinted neutrals would improve the palette.
-- Never default to cyan-on-dark, purple-to-blue gradients, or neon accents on dark backgrounds as a shortcut to visual interest.
-- Never default to gradient text on metrics, headings, or hero numbers.
-- Never default to dark mode plus glowing accent as the primary design decision.
+**FORBIDDEN**: Large rounded icons placed above every heading as a default layout pattern.
+*(No UNLESS — this is always a structural laziness, not a domain choice.)*
 
-**Layout**
+---
 
-- Never wrap everything in cards. Not everything needs a container.
-- Never nest cards inside cards.
-- Never default to the "hero metrics" layout: big number plus small label plus gradient background.
-- Never default to three equal-width cards as the entire layout.
-- Never center-align all content. Use alignment to create rhythm, not just symmetry.
+### Color
 
-**Motion**
+**FORBIDDEN**: Pure `#000000` as background or body text color without checking tinted alternatives.
+**UNLESS**:
+- Domain is finance terminal, print replica, or high-contrast accessibility mode where pure black is the correct convention, OR
+- Existing brand guidelines explicitly specify pure black, OR
+- DECISION log contains: `DECISION: use pure black BECAUSE: [domain/brand reason]`
 
-- Never animate layout properties (`width`, `height`, `top`, `left`, `margin`, `padding`).
-- Never exceed `200ms` for interaction feedback.
-- Never use bounce or elastic easing as the default interaction language.
-- Always prefer `ease-out` variants such as `cubic-bezier(0.25, 1, 0.5, 1)`.
-- Always respect `prefers-reduced-motion`.
+**FORBIDDEN**: Pure `#ffffff` as the page background without checking tinted alternatives.
+**UNLESS**: Same conditions as pure black above.
+
+**FORBIDDEN**: Cyan-on-dark, purple-to-blue gradients, or neon accents on dark backgrounds.
+**UNLESS**:
+- Target domain is gaming, entertainment, nightlife, or creative-dark where this color convention is established and expected, OR
+- User has explicitly requested this aesthetic, OR
+- DECISION log contains: `DECISION: use [color convention] BECAUSE: [domain reason]`
+
+**FORBIDDEN**: Gradient text on metrics, headings, or hero numbers.
+**UNLESS**:
+- User has explicitly requested gradient text in the current conversation, OR
+- DECISION log contains an explicit entry with domain justification.
+*(Note: there is no domain where gradient text on data is the correct default. This UNLESS is narrow.)*
+
+**FORBIDDEN**: Dark mode + glowing neon accent as the primary visual identity.
+**UNLESS**:
+- Target domain is gaming, entertainment, nightlife, or creative-dark where this is the established convention, OR
+- User has explicitly requested it, OR
+- DECISION log contains: `DECISION: dark + neon BECAUSE: [domain reason]`
+
+---
+
+### Layout
+
+**FORBIDDEN**: Three equal-width columns as the entire page layout.
+**UNLESS**:
+- Content is genuinely three parallel items of equal weight with no hierarchy between them, AND
+- DECISION log contains: `DECISION: three-column equal layout BECAUSE: [content reason]`
+
+**FORBIDDEN**: Nested cards (a card containing another card as its primary content surface).
+*(No UNLESS — nested containment always signals a structural problem, not a design choice.)*
+
+**FORBIDDEN**: Hero metrics layout (large number + small label + gradient background card) as the primary page composition.
+**UNLESS**:
+- Domain is a live operations dashboard where glanceable metrics are the primary job-to-be-done, AND
+- DECISION log contains: `DECISION: hero metrics BECAUSE: [specific operational use case]`
+
+**FORBIDDEN**: Center-aligning more than 60% of content blocks on a single page.
+**UNLESS**:
+- Layout is a single-column centered editorial, a landing page with a known centered-hero convention, or a narrow prose document, OR
+- DECISION log contains: `DECISION: centered layout BECAUSE: [reason grounded in content structure]`
+
+---
+
+### Motion
+
+**FORBIDDEN**: Animating layout properties — `width`, `height`, `top`, `left`, `margin`, `padding`.
+*(No UNLESS — these always cause layout recalculation. Use `transform` + `clip-path` instead.)*
+
+**FORBIDDEN**: Interaction feedback duration exceeding `200ms`.
+*(No UNLESS — human perception makes this a hard cap for responsiveness.)*
+
+**FORBIDDEN**: Bounce (`cubic-bezier(0.34, 1.56, 0.64, 1)`) or elastic easing as the default interaction language.
+**UNLESS**:
+- Domain is a playful consumer app, toy-like interface, or children's product where spring-heavy motion is part of the brand personality, AND
+- DECISION log contains: `DECISION: bounce/elastic easing BECAUSE: [brand/audience reason]`
+
+**REQUIRED**: `ease-out` variants such as `cubic-bezier(0.25, 1, 0.5, 1)` as the default.
+
+**REQUIRED**: `prefers-reduced-motion` support whenever motion is introduced.
+
+---
 
 ## Change policy
 
@@ -54,21 +120,26 @@ If a project-specific reason justifies one of these patterns, the reason must be
 - Escalate to stronger visual change only when the current design language is generic, inconsistent, low-signal, or harmful to clarity.
 - When taste and continuity conflict, prefer continuity unless the user explicitly asks for a stronger reset or the current design is clearly the root problem.
 
+---
+
 ## Production baseline
 
-These are default expectations for "production-minded" work:
+These are default expectations for production-minded work. Each is a pass/fail item — report them as such in the Verification phase.
 
-- visible focus states and keyboard-reachable interactions
-- `prefers-reduced-motion` support when motion is introduced
-- touch targets at least `44x44px` on mobile
-- semantic HTML where applicable
-- responsive behavior without horizontal overflow
-- no framework migrations unless explicitly requested
-- Tailwind version awareness when Tailwind is present
-- metadata hygiene on page-level work when relevant
-- motion choices that stay inside reasonable performance bounds
+- [ ] Visible focus states and keyboard-reachable interactions
+- [ ] `prefers-reduced-motion` support when motion is introduced
+- [ ] Touch targets at least `44×44px` on mobile
+- [ ] Semantic HTML where applicable
+- [ ] Responsive behavior without horizontal overflow
+- [ ] No framework migrations unless explicitly requested
+- [ ] Tailwind version awareness when Tailwind is present
+- [ ] Metadata hygiene on page-level work when relevant
+- [ ] Motion choices that stay inside reasonable performance bounds
+- [ ] No truncated code output (no `// ... rest of implementation`, no stubs)
 
 Project-specific requirements can be stricter than this baseline and should take precedence.
+
+---
 
 ## Technical baseline (Tailwind projects)
 
@@ -85,6 +156,41 @@ Project-specific requirements can be stricter than this baseline and should take
 - Use `tabular-nums` for numeric data.
 - Animate only compositor properties: `transform`, `opacity`.
 - Pause looping animations when off-screen.
+
+---
+
+## Verification phase (mandatory)
+
+After implementation, self-check every Production baseline item. Report as:
+
+```
+VERIFICATION:
+- Focus states: PASS / FAIL
+- prefers-reduced-motion: PASS / FAIL
+- Touch targets 44×44px: PASS / FAIL
+- Semantic HTML: PASS / FAIL
+- Responsive / no overflow: PASS / FAIL
+- No framework migration: PASS / FAIL
+- No truncated output: PASS / FAIL
+- [Any FORBIDDEN pattern used]: UNLESS condition met — [which condition]
+```
+
+FAIL items must be fixed before the output is complete. A FAIL is not a note for later.
+
+---
+
+## Deviation rule
+
+If implementation diverges from a DECISION logged in `<design-log>`, emit inline:
+
+```
+DEVIATION: [what changed from the logged decision]
+BECAUSE: [reason — must reference a discovered project fact or user request, not a new aesthetic preference]
+```
+
+Silent drift from a logged decision is a contract violation.
+
+---
 
 ## Output completeness
 

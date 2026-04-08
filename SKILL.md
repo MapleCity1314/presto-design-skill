@@ -9,17 +9,42 @@ A route-driven design workflow. Detect intent, load one cluster and one optional
 
 ---
 
-## 1. Context Check
+## 1. Context Phase (mandatory — run before any design work)
 
-Before doing any design work, confirm you have:
-- **Audience**: who uses this, and in what context?
-- **Brand personality / tone**: how should it feel?
-- **Use cases**: what jobs are they trying to get done?
+Before routing to a cluster, complete these steps in order. Declare any gap you cannot fill — do not skip silently.
 
-Check in order:
-1. Current conversation already contains this context: proceed.
-2. `.impeccable.md` exists in project root with a `## Design Context` section: read it and proceed.
-3. Neither exists: load `context/teach-impeccable.md` and run that workflow first.
+**1a. Identify host stack**
+- Grep `package.json` for framework, styling libraries, icon packages, animation libraries
+- Check for `tailwind.config.*` or `@theme` in CSS (detect Tailwind version)
+- Check for `@font-face` declarations and existing CSS variables / design tokens
+- Report what you find as a short factual list
+
+**1b. Sample existing design language**
+- List all `font-family` values found in the codebase (exact values, not guesses)
+- List color values defined in tokens or CSS variables (count them)
+- List spacing scale values if a system exists
+- If no codebase is provided: state "no codebase — working from brief only"
+
+**1c. Name reference products**
+Name ≥3 products in the target domain. For each, list ≥3 distinguishing characteristics:
+
+```
+Reference: [Product name]
+- [Observable characteristic 1]
+- [Observable characteristic 2]
+- [Observable characteristic 3]
+```
+
+These characteristics must be specific (e.g., "single accent blue, generous whitespace, monospace for code samples") — not generic ("clean", "minimal").
+
+**1d. Restate the brief**
+In your own words (do not copy from the user message):
+- Who is the audience and what context do they use this in?
+- What is the primary job-to-be-done?
+- What tone or register should the interface project?
+
+**1e. Gap declaration**
+If any of 1a–1d cannot be completed, state: "GAP: [what is missing] — [what assumption I am making instead]"
 
 ---
 
@@ -74,6 +99,36 @@ User override signals:
 
 ---
 
+## 2.5 Decision Log Phase (mandatory — emit before writing code)
+
+After the Context phase and parameter calibration, emit a `<design-log>` block. This block is the implementation contract. Every downstream decision traces back to it.
+
+```
+<design-log>
+DECISION: [type system — font family/families and scale approach]
+BECAUSE: [grounded in audience, domain, or Context phase finding]
+
+DECISION: [color system — palette approach, mode, token strategy]
+BECAUSE: [grounded in audience, domain, or Context phase finding]
+
+DECISION: [layout primitive policy — grid approach, max-width, column strategy]
+BECAUSE: [grounded in audience, domain, or Context phase finding]
+
+DECISION: [motion policy — level, key interactions, library if any]
+BECAUSE: [grounded in audience, domain, or Context phase finding]
+
+DECISION: [icon family — which library, why this one]
+BECAUSE: [grounded in existing project deps or domain convention]
+</design-log>
+```
+
+Rules:
+- Every BECAUSE must reference a fact from the Context phase, a user-stated requirement, or a named domain convention — never aesthetic preference alone ("it looks good" is not a BECAUSE).
+- If a BECAUSE cannot be grounded, state "UNDECIDED: [category] — [what information would resolve it]" and do not proceed to code until resolved.
+- Required categories: type system, color system, layout primitive policy, motion policy, icon family.
+
+---
+
 ## 3. Intent To Cluster Routing
 
 Load exactly one cluster:
@@ -110,11 +165,9 @@ After selecting a cluster, check for an aesthetic signal and load a preset if on
 
 Every output from every cluster must satisfy `contract.md`. Read it before writing code.
 
-Before coding, produce a short design rationale covering:
+The contract now includes FORBIDDEN UNLESS rules (replacing the old adjective-level anti-slop rules). If a forbidden pattern appears in your output, document which UNLESS condition was satisfied.
 
-- why this direction fits the audience
-- why the chosen typography/color/layout approach fits the product
-- why this level of change is appropriate for the current project
+After implementation, run the Verification phase from `contract.md` and report every item as PASS or FAIL.
 
 ---
 
@@ -147,6 +200,15 @@ Do not force a CSS-module or styled-components refactor in a Tailwind project un
 ## 8. Execution
 
 Follow the selected cluster's workflow. This file is only the router. Do not improvise routing rules mid-task.
+
+**Deviation rule**: if implementation diverges from any DECISION in the `<design-log>`, emit inline:
+
+```
+DEVIATION: [what changed from the logged decision]
+BECAUSE: [reason — must reference a discovered project fact or user request, not a new aesthetic preference]
+```
+
+Silent drift from a logged decision is a contract violation.
 
 Respect-the-stack rule:
 

@@ -47,7 +47,22 @@ To run 72 generations, the runner.ts would need to:
 
 ---
 
-## Decision Points That Require Presto Input
+## Decisions — Confirmed 2026-04-09
+
+| Decision | Choice |
+|---|---|
+| Generator model | Claude Sonnet 4.6 (Anthropic API) |
+| Judge model | GPT-4o (OpenAI API) |
+| Runs per cell | n ≥ 10 (was 3 in original prompt) |
+| Runner automation | Full TypeScript automation |
+| Local Gemma | Consistency check only (not primary judge) |
+
+Total generations: 3 variants × 8 cases × 10 runs = **240 generations**.
+Judge calls: 240 × 5 dimensions = **1,200 scoring calls**.
+
+---
+
+## Original Decision Points (resolved)
 
 ### 1. Runner API target
 Which LLM do you want to generate against?
