@@ -1,0 +1,13 @@
+{
+  "name": "presto-design-experiments",
+  "private": true,
+  "scripts": {
+    "run": "npx ts-node runner.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
+    "openai": "^4.104.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

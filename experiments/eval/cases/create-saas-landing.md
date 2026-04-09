@@ -1,33 +1,24 @@
-# Eval Case: Create SaaS Landing Page
+Create a polished SaaS landing page design concept for a product called SignalForge.
 
-## Task description
+SignalForge is an AI-assisted observability platform for engineering teams. It helps teams unify logs, traces, incident timelines, and anomaly detection into one workflow. The product is positioned for startups and mid-market SaaS companies that have outgrown basic monitoring tools but do not want enterprise complexity.
 
-Build a landing page from scratch for Meridian, a B2B workflow automation SaaS. The product helps operations teams at mid-market companies (50–500 employees) reduce manual handoffs between internal tools. The team has a brief design system in CSS variables but no existing landing page. Start from scratch.
+The landing page should feel credible, sharp, and modern without looking like a generic AI template. The audience is technical buyers: engineering managers, CTOs, and staff engineers. The design should communicate speed, trust, and operational clarity.
 
-## Stack context
+Requirements:
 
-- Framework: Next.js 14 (App Router)
-- Styling: Tailwind CSS v4 with `@theme` tokens in `globals.css`
-- Existing tokens: `--color-brand: oklch(52% 0.18 240)` (slate blue), `--font-sans: 'Inter', sans-serif`
-- No existing landing page — green field
-- No animation library installed
+- Hero section with a strong headline, supporting copy, primary CTA, secondary CTA, and a product visualization concept
+- Social proof or trust indicators near the top
+- Three to five feature sections that explain product value clearly
+- A workflow or product-story section that shows how teams move from alert to resolution
+- Pricing teaser or plan comparison summary
+- Final CTA section
+- Mobile-responsive thinking, not desktop-only
 
-## Constraints
+Constraints:
 
-- Audience: VP Ops and Head of RevOps at mid-market SaaS companies, evaluating tools on behalf of their team
-- Tone: confident, trustworthy, technically competent — not playful, not enterprise-formal
-- Required sections: hero, 3 core features, 1 social proof row (logos or quote), pricing CTA
-- Hard requirement: no full-page dark mode — light mode primary
-- Hard requirement: must work without JavaScript for initial render
+- Avoid overused neon cyberpunk AI aesthetics
+- Use a distinct visual direction with clear typography, color logic, and hierarchy
+- Keep the output practical enough that a designer or frontend engineer could execute it
+- Include layout guidance, component ideas, and content tone
 
-## Adversarial signal
-
-None. Standard case.
-
-## What a good output demonstrates
-
-- Committed aesthetic direction with grounded BECAUSE rationale
-- Typography choice that is NOT Inter (the existing token) as the display font
-- Layout that escapes the three-equal-column feature grid
-- Pricing CTA with clear hierarchy between tiers
-- Full production baseline (focus states, reduced-motion, responsive, semantic HTML)
+Deliver a high-quality design response, not implementation code.
