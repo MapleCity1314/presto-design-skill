@@ -11,15 +11,21 @@ A route-driven design workflow. Detect intent, load one cluster and one optional
 
 ## 1. Context Check
 
-Before doing any design work, confirm you have:
-- **Audience**: who uses this, and in what context?
-- **Brand personality / tone**: how should it feel?
-- **Use cases**: what jobs are they trying to get done?
+Before doing any design work, confirm you have two things: **design context** (who, why) and **design spec** (how it looks).
+
+### Design context (audience, tone, use cases)
 
 Check in order:
 1. Current conversation already contains this context: proceed.
 2. `.impeccable.md` exists in project root with a `## Design Context` section: read it and proceed.
 3. Neither exists: load `context/teach-impeccable.md` and run that workflow first.
+
+### Design spec (visual language)
+
+Check in order:
+1. `DESIGN.md` exists in project root: read it and treat as the active design authority for colors, typography, elevation, and component decisions. Cluster defaults yield to DESIGN.md values.
+2. No `DESIGN.md` exists but the user provides a vibe prompt, brand URL, or explicit visual direction: load `context/design-spec.md` and generate `DESIGN.md` before proceeding.
+3. No `DESIGN.md` and no visual direction given: proceed with cluster defaults. Optionally suggest generating a `DESIGN.md` for consistency across future tasks.
 
 ---
 
@@ -80,6 +86,7 @@ Load exactly one cluster:
 
 | Signal | Cluster |
 |--------|---------|
+| Design system, design spec, DESIGN.md, style guide, brand tokens, visual language | `context/design-spec.md` (generate or update `DESIGN.md`, then resume) |
 | Build, create, make, or design from scratch | `clusters/create.md` |
 | Improve, refine, polish, or simplify specific elements | `clusters/refine.md` |
 | Redesign, upgrade, or overhaul an existing project | `clusters/redesign.md` |

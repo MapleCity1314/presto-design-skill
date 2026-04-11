@@ -6,7 +6,7 @@ This repository publishes a single root skill. Keep the top-level layout stable:
 - `SKILL.md`: primary entry point and routing logic for the skill.
 - `clusters/`: intent-specific workflows such as `create.md`, `refine.md`, and `motion.md`.
 - `presets/`: optional aesthetic overlays such as `minimalist.md` and `editorial.md`.
-- `context/`: supporting prompts used when design context is missing.
+- `context/`: supporting prompts — `teach-impeccable.md` for audience/brand context, `design-spec.md` for DESIGN.md generation workflow.
 - `contract.md`: non-negotiable output rules for every cluster.
 - `gsap-integration.md`: motion-specific guidance when GSAP is relevant.
 - `agents/openai.yaml`: agent configuration.

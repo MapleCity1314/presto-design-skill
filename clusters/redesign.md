@@ -16,6 +16,7 @@ Tailwind note: when the project uses Tailwind CSS, load `tailwind-integration.md
 
 Before diagnosing anything, read the codebase to understand what you're working with:
 
+- `DESIGN.md` → if present, this is the target design authority. Diagnosis in Phase 2 should measure the current implementation against DESIGN.md, not against generic best practices.
 - `package.json` / config files → framework, Tailwind version (v3 vs v4), installed libraries
 - Main layout components → current grid, spacing patterns, component structure
 - CSS variables / design tokens → existing color palette, font stack, spacing scale

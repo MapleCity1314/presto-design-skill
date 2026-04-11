@@ -47,10 +47,20 @@ If a project-specific reason justifies one of these patterns, the reason must be
 - Always prefer `ease-out` variants such as `cubic-bezier(0.25, 1, 0.5, 1)`.
 - Always respect `prefers-reduced-motion`.
 
+## DESIGN.md authority
+
+When a `DESIGN.md` exists in the project root, it is the primary design authority:
+
+- Colors, typography, elevation, and component specs in DESIGN.md override cluster defaults.
+- Do's and Don'ts in DESIGN.md are hard constraints — treat violations as bugs.
+- If DESIGN.md is vague on a dimension (e.g., "warm feel" without hex values), use the cluster's judgment to concretize it, but stay consistent with the stated intent.
+- If DESIGN.md conflicts with contract.md, DESIGN.md wins on aesthetic choices; contract.md wins on production baseline and accessibility requirements.
+
 ## Change policy
 
 - Respect the host stack and working architecture.
 - Respect an existing design language when it is coherent, branded, and competently implemented.
+- Respect `DESIGN.md` when it exists — it represents deliberate design decisions.
 - Escalate to stronger visual change only when the current design language is generic, inconsistent, low-signal, or harmful to clarity.
 - When taste and continuity conflict, prefer continuity unless the user explicitly asks for a stronger reset or the current design is clearly the root problem.
 

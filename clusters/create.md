@@ -7,7 +7,8 @@ Build distinctive, production-grade UI from scratch. Synthesizes: `frontend-desi
 Tailwind checkpoint: if the project uses Tailwind, load `tailwind-integration.md` and detect whether it is v3 or v4 before choosing where tokens live.
 
 1. **Context confirmed** (per SKILL.md §1) — you have audience, tone, and use cases.
-2. **Aesthetic direction chosen** — if a preset is loaded, follow it. Otherwise, commit to one of these directions before writing a line of code:
+2. **DESIGN.md check** — if `DESIGN.md` exists, read it now. Its colors, typography, elevation, and component specs are your starting point. Skip the aesthetic direction selection below and use the spec. If DESIGN.md is vague on a dimension, fill it in consistent with the Overview section's stated intent.
+3. **Aesthetic direction chosen** — if no DESIGN.md and a preset is loaded, follow it. Otherwise, commit to one of these directions before writing a line of code:
    - Brutally minimal · Maximalist · Retro-futuristic · Organic/natural
    - Luxury/refined · Playful/toy-like · Editorial/magazine · Brutalist/raw
    - Art deco/geometric · Soft/pastel · Industrial/utilitarian
