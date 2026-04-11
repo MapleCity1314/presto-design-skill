@@ -1,0 +1,11 @@
+{
+  "output_id": "v0/create-saas-landing/run-01",
+  "scores": {
+    "design_quality": 8,
+    "clarity": 8,
+    "actionability": 8,
+    "adherence": 8
+  },
+  "total": 32,
+  "reasoning": "Clear technical direction, useful section-by-section guidance, and a credible visual system without default AI gradients."
+}

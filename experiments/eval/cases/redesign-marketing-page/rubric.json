@@ -1,0 +1,17 @@
+{
+  "case_id": "redesign-marketing-page",
+  "case_type": "redesign",
+  "adversarial": false,
+  "items": [
+    "Output explicitly identifies the gradient hero, glassmorphism cards, and gradient headline text as problems in its initial scan or diagnosis.",
+    "Output replaces the hero with a non-gradient approach.",
+    "Output replaces the glassmorphism feature-card treatment with a different surface treatment.",
+    "Output removes gradient text from the headline.",
+    "Output includes a hero code snippet or request-response example as a first-class part of the redesign.",
+    "Output stays within Next.js App Router plus Tailwind CSS v3 and does not add an animation library.",
+    "Output proposes typography appropriate for a technical API audience and names at least one specific font family.",
+    "Output keeps the copy technical and direct rather than hype-driven.",
+    "Output avoids falling back to three equal feature cards as the main composition.",
+    "Output references the existing wordmark or otherwise preserves a serious developer-facing brand direction."
+  ]
+}

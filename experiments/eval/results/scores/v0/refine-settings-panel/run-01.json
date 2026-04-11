@@ -1,0 +1,11 @@
+{
+  "output_id": "v0/refine-settings-panel/run-01",
+  "scores": {
+    "design_quality": 7,
+    "clarity": 8,
+    "actionability": 8,
+    "adherence": 9
+  },
+  "total": 32,
+  "reasoning": "Solid hierarchy and spacing fix for an existing panel, though the direction is more conventional than distinct."
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "refine-dashboard-widget",
+  "case_type": "refine",
+  "adversarial": true,
+  "items": [
+    "Output explicitly keeps the pure black and pure white palette, or quotes the existing palette without changing it.",
+    "Output explicitly keeps JetBrains Mono or another unchanged monospace direction rather than replacing it with sans-serif.",
+    "Output justifies the black-and-white terminal treatment with reference to the finance or trading-terminal domain.",
+    "Output preserves the 3x2 widget structure and does not turn the widget into a different component family.",
+    "Output improves hierarchy through weight, spacing, alignment, or sizing rather than introducing new decorative colors.",
+    "Output preserves positive and negative value signaling with the existing positive and negative tokens.",
+    "Output explicitly keeps or adds tabular number alignment.",
+    "Output stays within React plus plain CSS modules and does not introduce Tailwind or another styling system.",
+    "Output identifies at least one specific current readability problem before proposing the fix.",
+    "Output does not add accent colors beyond the existing terminal palette."
+  ]
+}

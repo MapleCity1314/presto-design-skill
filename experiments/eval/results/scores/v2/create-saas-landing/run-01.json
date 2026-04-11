@@ -1,0 +1,11 @@
+{
+  "output_id": "v2/create-saas-landing/run-01",
+  "scores": {
+    "design_quality": 8,
+    "clarity": 8,
+    "actionability": 8,
+    "adherence": 8
+  },
+  "total": 32,
+  "reasoning": "Strong, detailed landing-page concept with clear visual system, hierarchy, and section-by-section guidance. Slightly over-specified and somewhat template-like, but it stays faithful to the brief and is practical to execute."
+}

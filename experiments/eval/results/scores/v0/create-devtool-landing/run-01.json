@@ -1,0 +1,11 @@
+{
+  "output_id": "v0/create-devtool-landing/run-01",
+  "scores": {
+    "design_quality": 9,
+    "clarity": 8,
+    "actionability": 8,
+    "adherence": 9
+  },
+  "total": 34,
+  "reasoning": "Strong adversarial handling: serif on warm off-white is explicitly justified, and the landing page reads premium rather than generic SaaS."
+}

@@ -1,0 +1,10 @@
+{
+  "variant": "v1",
+  "case_id": "create-saas-landing",
+  "run_id": "01",
+  "generator_model": "subagent-manual",
+  "generated_at": "2026-04-10T02:34:05.328Z",
+  "prompt_hash": "manual-subagent-ingest",
+  "judge_prompt_version": "v2",
+  "source_file": "E:\\code\\work\\presto-design-skill\\experiments\\eval\\tmp\\v1-create-saas-run-01.md"
+}

@@ -17,3 +17,4 @@ build/
 .cache/
 __pycache__/
 *.pyc
+experiments/eval/tmp/

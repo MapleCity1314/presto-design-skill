@@ -1,0 +1,17 @@
+{
+  "case_id": "refine-settings-panel",
+  "case_type": "refine",
+  "adversarial": false,
+  "items": [
+    "Output preserves the three-section structure of the panel.",
+    "Output identifies at least two concrete current problems before proposing changes.",
+    "Output makes section headers visually distinct from field labels with specific size, weight, color, or spacing changes.",
+    "Output makes spacing between sections clearly larger than spacing within a section.",
+    "Output keeps labels above inputs and explicitly associates them with inputs or accessible field wrappers.",
+    "Output states that the result remains a refine rather than a redesign, or includes a self-check confirming that boundary.",
+    "Output does not introduce a new component library.",
+    "Output does not add new outer card wrappers around the existing section containers.",
+    "Output stays within React + Next.js + Tailwind CSS v3 and uses the existing component model.",
+    "Output proposes only reversible refinement-scope changes rather than structural replacement."
+  ]
+}

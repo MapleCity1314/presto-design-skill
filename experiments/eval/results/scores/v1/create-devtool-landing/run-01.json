@@ -1,0 +1,11 @@
+{
+  "output_id": "v1/create-devtool-landing/run-01",
+  "scores": {
+    "design_quality": 9,
+    "clarity": 8,
+    "actionability": 8,
+    "adherence": 10
+  },
+  "total": 35,
+  "reasoning": "Excellent adversarial handling: it explicitly justifies serif typography and warm off-white, and the landing page direction feels premium and domain-correct. The design-log and implementation guidance are specific and usable."
+}

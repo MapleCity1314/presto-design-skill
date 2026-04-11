@@ -1,0 +1,11 @@
+{
+  "output_id": "v0/refine-form-flow/run-01",
+  "scores": {
+    "design_quality": 8,
+    "clarity": 9,
+    "actionability": 8,
+    "adherence": 9
+  },
+  "total": 34,
+  "reasoning": "Specific and usable refinements for progress, CTA hierarchy, and inline validation while keeping the three-step structure intact."
+}

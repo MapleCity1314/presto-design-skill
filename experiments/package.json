@@ -2,7 +2,12 @@
   "name": "presto-design-experiments",
   "private": true,
   "scripts": {
-    "run": "npx ts-node runner.ts"
+    "run": "node ./node_modules/ts-node/dist/bin.js runner.ts",
+    "eval:generate": "node ./node_modules/ts-node/dist/bin.js runner.ts --generate",
+    "eval:judge": "node ./node_modules/ts-node/dist/bin.js runner.ts --judge",
+    "eval:report": "node ./node_modules/ts-node/dist/bin.js runner.ts --report",
+    "eval:validate": "node ./node_modules/ts-node/dist/bin.js runner.ts --validate",
+    "eval:all": "node ./node_modules/ts-node/dist/bin.js runner.ts --all"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.54.0",

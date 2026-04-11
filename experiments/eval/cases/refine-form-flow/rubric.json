@@ -1,0 +1,17 @@
+{
+  "case_id": "refine-form-flow",
+  "case_type": "refine",
+  "adversarial": false,
+  "items": [
+    "Output preserves the three-step form structure rather than redesigning the flow into a different pattern.",
+    "Output adds a progress indicator with step numbering or step labels.",
+    "Output makes the Next action visually distinct from the Back action.",
+    "Output places errors inline at the field and includes at least one specific actionable error message example.",
+    "Output keeps labels visible above inputs rather than relying on placeholder-only labeling.",
+    "Output states or demonstrates 44x44 minimum touch targets.",
+    "Output ensures the Back path remains available or explicitly prevents dead ends.",
+    "Output stays within Vue 3 + Vite + Tailwind CSS v3 and uses the existing Vesta components rather than replacing the stack.",
+    "Output identifies at least one current UX problem before proposing the fix.",
+    "Output avoids introducing a new animation library."
+  ]
+}

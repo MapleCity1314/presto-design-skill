@@ -1,0 +1,11 @@
+{
+  "output_id": "v1/create-saas-landing/run-01",
+  "scores": {
+    "design_quality": 8,
+    "clarity": 8,
+    "actionability": 9,
+    "adherence": 9
+  },
+  "total": 34,
+  "reasoning": "Clear, credible technical marketing direction with a practical layout system and usable component guidance. It avoids the AI-template pitfalls called out in the brief and stays on target."
+}

@@ -1,0 +1,11 @@
+{
+  "output_id": "v1/refine-form-flow/run-01",
+  "scores": {
+    "design_quality": 9,
+    "clarity": 8,
+    "actionability": 9,
+    "adherence": 9
+  },
+  "total": 35,
+  "reasoning": "Very strong step-by-step refinement with accessible progress, inline errors, distinct navigation, and preserved three-step structure. It is concrete enough to implement directly."
+}

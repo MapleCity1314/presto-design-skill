@@ -1,0 +1,10 @@
+{
+  "generator_model": "set-me-explicitly",
+  "judge_models": [
+    "set-judge-model-a",
+    "set-judge-model-b"
+  ],
+  "run_count": 3,
+  "judge_repeats": 3,
+  "notes": "Copy these values into env vars before a real run so generator and judge provenance stay explicit."
+}

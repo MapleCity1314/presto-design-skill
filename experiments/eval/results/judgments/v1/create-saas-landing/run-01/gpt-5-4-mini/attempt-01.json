@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "variant": "v1",
+    "case_id": "create-saas-landing",
+    "run_id": "01",
+    "judge_model": "gpt-5.4-mini",
+    "judge_attempt": "01",
+    "judged_at": "2026-04-10T02:36:56.693Z",
+    "judge_prompt_hash": "manual-subagent-ingest",
+    "judge_prompt_version": "v2",
+    "rubric_hash": "manual-subagent-ingest",
+    "source_file": "E:\\code\\work\\presto-design-skill\\experiments\\eval\\tmp\\judge-v1-gpt54mini-attempt-01.json"
+  },
+  "result": {
+    "case_id": "create-saas-landing",
+    "fatal_flaws": [],
+    "rubric_results": [
+      {
+        "item": "Output names a specific display font family and a specific body font family, or clearly specifies one family used across roles.",
+        "evidence": "- Display: `Cabinet Grotesk`\n- Body: `Geist`",
+        "satisfied": true
+      },
+      {
+        "item": "Output proposes a concrete color system with at least three tokens or explicit values covering surface, text, and accent.",
+        "evidence": "`--bg:            oklch(97% 0.010 85);` `--text:          oklch(18% 0.015 240);` `--accent:        oklch(67% 0.17 62);`",
+        "satisfied": true
+      },
+      {
+        "item": "Output includes a hero with headline, supporting copy, primary CTA, secondary CTA, and a concrete product-visualization concept.",
+        "evidence": "- Headline: `Find the root cause before the incident spreads.`\n- Primary CTA: `Start free trial`\n- Secondary CTA: `See incident replay`\n- Product visualization concept:",
+        "satisfied": true
+      },
+      {
+        "item": "Output includes social proof or trust indicators near the top of the page.",
+        "evidence": "- `Trusted by platform and infrastructure teams at`\n- 5-6 monochrome customer marks",
+        "satisfied": true
+      },
+      {
+        "item": "Output proposes between three and five feature sections with distinct roles or content.",
+        "evidence": "Feature 1: One timeline for the whole incident; Feature 2: Find the cause, not just the symptom; Feature 3: Built for responders, not dashboard tourists; Feature 4: Add signal without adding noise",
+        "satisfied": true
+      },
+      {
+        "item": "Output includes a workflow or product-story section that explicitly connects alert to resolution.",
+        "evidence": "Section title:\n`Alert to resolution`\n\nSteps:\n1. Detect\n2. Correlate\n3. Assign\n4. Resolve",
+        "satisfied": true
+      },
+      {
+        "item": "Output includes a pricing teaser or plan comparison summary.",
+        "evidence": "Plans:\n- Starter\n- Team\n- Growth\n\nTable style:\n- ruled lines",
+        "satisfied": true
+      },
+      {
+        "item": "Output includes a final CTA section.",
+        "evidence": "### 7. Final CTA\n\nHeadline:\n`See the full incident path before the next outage spreads.`",
+        "satisfied": true
+      },
+      {
+        "item": "Output addresses responsive behavior or mobile treatment with at least one specific adaptation.",
+        "evidence": "### Mobile (375px)\n- Hero becomes single-column\n- Product panel stacks below CTAs",
+        "satisfied": true
+      },
+      {
+        "item": "Output avoids neon cyberpunk AI tropes by explicitly choosing a different visual direction.",
+        "evidence": "Warm neutrals with a restrained amber accent. No cyan-on-dark, no purple gradient, no neon.",
+        "satisfied": true
+      }
+    ],
+    "score": 10,
+    "max_score": 10,
+    "notes": "The output is a complete, well-structured landing-page concept with concrete design decisions and clear responsive guidance."
+  }
+}

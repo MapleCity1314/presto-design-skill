@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "case_id": "create-consumer-app",
+      "case_type": "create",
+      "adversarial": false
+    },
+    {
+      "case_id": "create-devtool-landing",
+      "case_type": "create",
+      "adversarial": true
+    },
+    {
+      "case_id": "create-saas-landing",
+      "case_type": "create",
+      "adversarial": false
+    },
+    {
+      "case_id": "redesign-admin-dashboard",
+      "case_type": "redesign",
+      "adversarial": false
+    },
+    {
+      "case_id": "redesign-marketing-page",
+      "case_type": "redesign",
+      "adversarial": false
+    },
+    {
+      "case_id": "refine-dashboard-widget",
+      "case_type": "refine",
+      "adversarial": true
+    },
+    {
+      "case_id": "refine-form-flow",
+      "case_type": "refine",
+      "adversarial": false
+    },
+    {
+      "case_id": "refine-settings-panel",
+      "case_type": "refine",
+      "adversarial": false
+    }
+  ]
+}

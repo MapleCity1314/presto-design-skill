@@ -1,0 +1,17 @@
+{
+  "case_id": "create-consumer-app",
+  "case_type": "create",
+  "adversarial": false,
+  "items": [
+    "Output names a specific display font family and a specific body font family, or explicitly states one family is reused with a different role.",
+    "Output proposes a concrete night-suitable color system with at least three named tokens or explicit values, and it does not use pure #000000 or pure #ffffff as the main surface.",
+    "Output describes the mood slider as an accessible component with explicit keyboard or ARIA behavior.",
+    "Output describes the journal entry area in a way that makes it feel like a page, notebook, sheet, or writing surface rather than a generic form field.",
+    "Output keeps the previous-entry cards out of a three-equal-column layout and proposes a concrete alternative arrangement.",
+    "Output stays within the React + Tailwind CSS v3 stack and does not replace it with another framework or styling system.",
+    "Output uses Framer Motion only for purposeful motion and explicitly addresses reduced-motion behavior.",
+    "Output addresses the primary 375px mobile context with at least one specific layout or spacing decision.",
+    "Output names at least three concrete screen regions or sections for the home screen.",
+    "Output includes at least one concrete accessibility requirement beyond the slider, such as focus states, semantics, or contrast."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "redesign-admin-dashboard",
+  "case_type": "redesign",
+  "adversarial": false,
+  "items": [
+    "Output begins with a scan, diagnosis, or summary of the current dashboard before proposing the redesign.",
+    "Output explicitly replaces the six equal-width metric-card layout with a different hierarchy or grid approach.",
+    "Output keeps all six required metrics present in the redesign plan.",
+    "Output removes the gradient-card treatment and does not keep gradient metric surfaces or gradient text for values.",
+    "Output uses color for meaning only, such as caution or status, rather than decorative gradients.",
+    "Output stays within Next.js plus Tailwind CSS v4 and does not replace the stack or the installed component ecosystem.",
+    "Output references the existing forest-green brand token or preserves the existing design-system direction rather than inventing an unrelated palette.",
+    "Output includes at least one concrete large-screen layout decision for the 1280px+ primary context.",
+    "Output addresses focus states or keyboard accessibility for dashboard controls.",
+    "Output's copy or rationale stays professional and information-forward rather than marketing-heavy."
+  ]
+}

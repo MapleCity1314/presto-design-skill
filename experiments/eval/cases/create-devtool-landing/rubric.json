@@ -1,0 +1,17 @@
+{
+  "case_id": "create-devtool-landing",
+  "case_type": "create",
+  "adversarial": true,
+  "items": [
+    "Output names a specific serif display font family for headings.",
+    "Output specifies a warm off-white background token or explicit light value for the primary page surface.",
+    "Output explicitly justifies the serif and warm off-white direction with reference to the premium developer-tool domain, or names products like Postico, TablePlus, or Tower as precedent.",
+    "Output includes a hero with a concrete product screenshot or window-frame treatment.",
+    "Output proposes at least two additional sections beyond the hero, plus a pricing or download CTA section.",
+    "Output is desktop-first and states at least one large-screen layout behavior.",
+    "Output stays within Astro plus plain CSS custom properties and does not introduce Tailwind, CSS-in-JS, or another framework.",
+    "Output provides a concrete color system with at least three tokens or explicit values.",
+    "Output proposes copy or positioning that sounds like a premium paid tool rather than generic SaaS hype.",
+    "Output does not default to dark-mode developer-tool tropes unless it explicitly rejects them in favor of the correct domain convention."
+  ]
+}

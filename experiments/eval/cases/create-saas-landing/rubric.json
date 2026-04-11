@@ -1,0 +1,17 @@
+{
+  "case_id": "create-saas-landing",
+  "case_type": "create",
+  "adversarial": false,
+  "items": [
+    "Output names a specific display font family and a specific body font family, or clearly specifies one family used across roles.",
+    "Output proposes a concrete color system with at least three tokens or explicit values covering surface, text, and accent.",
+    "Output includes a hero with headline, supporting copy, primary CTA, secondary CTA, and a concrete product-visualization concept.",
+    "Output includes social proof or trust indicators near the top of the page.",
+    "Output proposes between three and five feature sections with distinct roles or content.",
+    "Output includes a workflow or product-story section that explicitly connects alert to resolution.",
+    "Output includes a pricing teaser or plan comparison summary.",
+    "Output includes a final CTA section.",
+    "Output addresses responsive behavior or mobile treatment with at least one specific adaptation.",
+    "Output avoids neon cyberpunk AI tropes by explicitly choosing a different visual direction."
+  ]
+}

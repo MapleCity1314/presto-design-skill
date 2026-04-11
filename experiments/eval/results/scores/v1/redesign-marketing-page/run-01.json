@@ -1,0 +1,11 @@
+{
+  "output_id": "v1/redesign-marketing-page/run-01",
+  "scores": {
+    "design_quality": 8,
+    "clarity": 8,
+    "actionability": 9,
+    "adherence": 9
+  },
+  "total": 34,
+  "reasoning": "Good technical-marketing redesign with explicit removal of the anti-slop patterns and a readable code-first hero. The layout and component guidance are specific enough to execute."
+}
